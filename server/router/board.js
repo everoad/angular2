@@ -5,7 +5,9 @@ var boardModel = require('../model/boardModel');
 
 //list
 router.get('/', (req, res, next) => {
-  boardModel.getList([], (rows) => {
+  var count = 10;
+  var start = (req.query.index-1) * count;
+  boardModel.getList([start, count], (rows) => {
     res.json(rows);
   });
 });

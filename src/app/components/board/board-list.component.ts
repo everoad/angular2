@@ -13,14 +13,20 @@ import { BoardService }         from '../../services/board.service';
 export class BoardListComponent implements OnInit {
 
   boards: Board[] = [];
+  index: number = 1;
 
   constructor(
     private boardService: BoardService
   ) { }
 
   ngOnInit(): void {
-    this.boardService.getList()
-      .then(boards => this.boards = boards);
+    this.boardService.getList(this.index)
+      .then(boards => boards.map(board => this.boards.push(board)));
+  }
+
+  onScroll(): void {
+    this.boardService.getList(++this.index)
+      .then(boards => boards.map(board => this.boards.push(board)));
   }
 
 }

@@ -1,7 +1,7 @@
 var conn = require('./config/connect');
 
 exports.getList = function(params, callback) {
-  var sql = 'SELECT * FROM board';
+  var sql = 'SELECT * FROM board LIMIT ?, ?';
   conn.query(sql, params, (err, rows, fields) => {
     callback(rows);
   });

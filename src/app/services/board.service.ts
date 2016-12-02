@@ -11,8 +11,8 @@ export class BoardService {
     private http: Http
   ) { }
 
-  getList(): Promise<Board[]> {
-    return this.http.get('/api/board').toPromise()
+  getList(index: number): Promise<Board[]> {
+    return this.http.get('/api/board?index=' + index).toPromise()
       .then(res => res.json());
   }
 

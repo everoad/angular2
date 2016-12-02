@@ -1,5 +1,9 @@
 <h1>BoardList</h1>
-<div>
+<div
+  infinite-scroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()">
   <table class="table">
     <tr>
       <td>No</td>

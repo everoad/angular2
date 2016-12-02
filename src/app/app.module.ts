@@ -2,8 +2,10 @@ import { BrowserModule }        from '@angular/platform-browser';
 import { NgModule }             from '@angular/core';
 import { FormsModule }          from '@angular/forms';
 import { HttpModule }           from '@angular/http';
-
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { AppRoutingModule }     from './app-routing.module';
+
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent }         from './app.component';
 import { UserLoginComponent }   from './components/user/user-login.component';
@@ -32,11 +34,13 @@ import { BoardService }         from './services/board.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfiniteScrollModule
   ],
   providers: [
     UserService,
-    BoardService
+    BoardService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

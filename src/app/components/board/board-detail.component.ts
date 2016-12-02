@@ -32,7 +32,7 @@ export class BoardDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['api/board']);
   }
 
   delete(bd_id): void {
