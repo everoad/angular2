@@ -1,0 +1,6 @@
+<h1>edit page</h1>
+<div class="input-group" *ngIf="board">
+  <input type="text" name="board.bd_title" [(ngModel)]="board.bd_title" placeholder="Title.." class="form-control">
+  <textarea name="board.bd_content" [(ngModel)]="board.bd_content" placeholder="Content.." rows="8" cols="80" class="form-control"></textarea>
+  <button (click)="edit(board)">완료</button>
+</div>

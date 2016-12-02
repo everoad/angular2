@@ -1,0 +1,17 @@
+<h1>Hello Detail</h1>
+<div>
+  <table *ngIf="board" class="table">
+    <tr>
+      <td colspan="2">{{ board.bd_title }}</td>
+    </tr>
+    <tr>
+      <td>{{ board.bd_author }}</td><td>{{ board.bd_created }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">{{ board.bd_content }}</td>
+    </tr>
+  </table>
+  <button (click)="goBack()" class="btn btn-primary">목록</button>
+</div>
+<button (click)="delete(board.bd_id)" class="btn btn-primary">삭제</button>
+<a [routerLink]="['/api/board', board.bd_id, 'edit']" routerLinkActive="active" class="btn btn-primary" *ngIf="board">수정</a>

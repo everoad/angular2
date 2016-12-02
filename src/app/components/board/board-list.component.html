@@ -1,0 +1,18 @@
+<h1>BoardList</h1>
+<div>
+  <table class="table">
+    <tr>
+      <td>No</td>
+      <td>Title</td>
+      <td>Author</td>
+      <td>Created</td>
+    </tr>
+    <tr *ngFor="let board of boards">
+      <td></td>
+      <td><a [routerLink]="['/api/board', board.bd_id]" routerLinkActive="active">{{ board.bd_title }}</a></td>
+      <td>{{ board.bd_author }}</td>
+      <td>{{ board.bd_created }}</td>
+    </tr>
+  </table>
+  <a routerLink="new" routerLinkActive="active">글쓰기</a>
+</div>

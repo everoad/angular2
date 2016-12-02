@@ -1,0 +1,9 @@
+<div>Write</div>
+<form (submit)="write($event)" class="input-group">
+  <input type="text" name="bd_title" [(ngModel)]="bd_title"
+     placeholder="Title" class="form-control">
+  <textarea name="bd_content" [(ngModel)]="bd_content"
+     placeholder="Content.." rows="8" cols="80" class="form-control"></textarea>
+  <input type="submit" value="완료" class="btn btn-primary">
+</form>
+<button (click)="goBack()" class="btn btn-primary">목록</button>

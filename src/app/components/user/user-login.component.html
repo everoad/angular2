@@ -1,0 +1,8 @@
+<div>
+  <form (submit)="login($event)" class="input-group">
+    <input type="text" name="user_email" placeholder="Email.." [(ngModel)]="user_email" class="form-control">
+    <input type="password" name="user_pwd" placeholder="Password.." [(ngModel)]="user_pwd" class="form-control">
+    <input type="submit" value="Join" class="btn btn-primary">
+  </form>
+  <span>{{ message }}</span>
+</div>

@@ -1,0 +1,9 @@
+<div>
+  <form (submit)="join($event)" class="input-group">
+    <input type="text" name="user_email" placeholder="Email.." [(ngModel)]="user_email" class="form-control">
+    <input type="password" name="user_pwd" placeholder="Password.." [(ngModel)]="user_pwd" class="form-control" (blur)="check()">
+    <input type="password" name="user_pwd_cf" placeholder="Password_cf.." [(ngModel)]="user_pwd_cf" class="form-control" (blur)="check()">
+    <input type="submit" value="Join" class="btn btn-primary">
+    <div>{{ pwd_check }}</div>
+  </form>
+</div>
