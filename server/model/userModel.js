@@ -1,8 +1,6 @@
 var conn = require('./config/connect');
 
 exports.join = function(params, callback) {
-  console.log(params);
-  console.log(conn);
   var sql = 'INSERT INTO user(user_email, user_pwd, user_jdate) VALUES (?, ?, now())';
   conn.query(sql, params, (err, result) => {
     callback(result.insertId);

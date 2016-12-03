@@ -5,8 +5,8 @@ import { BoardService }         from '../../services/board.service';
 
 @Component({
   moduleId: module.id + '',
-  selector: 'board-list',
-  templateUrl: 'board-list.component.html'
+  templateUrl: 'board-list.component.html',
+  styleUrls: ['board-list.component.css']
 })
 
 

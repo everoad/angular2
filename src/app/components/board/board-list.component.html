@@ -11,8 +11,8 @@
       <td>Author</td>
       <td>Created</td>
     </tr>
-    <tr *ngFor="let board of boards">
-      <td></td>
+    <tr *ngFor="let board of boards, let i = index">
+      <td>{{ i+1 }}</td>
       <td><a [routerLink]="['/api/board', board.bd_id]" routerLinkActive="active">{{ board.bd_title }}</a></td>
       <td>{{ board.bd_author }}</td>
       <td>{{ board.bd_created }}</td>

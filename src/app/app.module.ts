@@ -5,7 +5,8 @@ import { HttpModule }           from '@angular/http';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { AppRoutingModule }     from './app-routing.module';
 
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy,
+         HashLocationStrategy } from '@angular/common';
 
 import { AppComponent }         from './app.component';
 import { UserLoginComponent }   from './components/user/user-login.component';
@@ -16,6 +17,10 @@ import { BoardDetailComponent } from './components/board/board-detail.component'
 import { BoardAddComponent }    from './components/board/board-add.component';
 import { BoardEditComponent }   from './components/board/board-edit.component';
 
+import { SidebarComponent }     from './components/template/sidebar.component';
+import { HeaderComponent }      from './components/template/header.component';
+import { FooterComponent }      from './components/template/footer.component';
+
 import { UserService }          from './services/user.service';
 import { BoardService }         from './services/board.service';
 
@@ -23,12 +28,18 @@ import { BoardService }         from './services/board.service';
 @NgModule({
   declarations: [
     AppComponent,
+
     BoardListComponent,
     BoardDetailComponent,
     BoardAddComponent,
     BoardEditComponent,
+
     UserLoginComponent,
-    UserJoinComponent
+    UserJoinComponent,
+
+    SidebarComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
